@@ -7,6 +7,7 @@ import 'package:flutter_bloc_simple/pages/ant_screen.dart';
 import 'package:flutter_bloc_simple/pages/bee_screen.dart';
 import 'package:flutter_bloc_simple/pages/cat_screen.dart';
 import 'package:flutter_bloc_simple/pages/home_screen.dart';
+import 'package:flutter_bloc_simple/pages/hotel_screen.dart';
 import 'package:flutter_bloc_simple/pages/pizza_screen.dart';
 import 'package:flutter_bloc_simple/route_name.dart';
 
@@ -36,8 +37,14 @@ class MainApp extends StatelessWidget {
 
         switch (routeName) {
           case RouteName.pizza:
+            //todo handle advanced BLoC
             pageRoute = MaterialPageRoute(
               builder: (context) => const PizzaScreen(),
+            );
+            break;
+          case RouteName.hotel:
+            pageRoute = MaterialPageRoute(
+              builder: (context) => const HotelScreen(),
             );
             break;
           default:

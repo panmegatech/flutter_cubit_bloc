@@ -32,6 +32,13 @@ class HomeScreen extends StatelessWidget {
         },
         child: const CustomText("Push Cat"),
       ),
+      ElevatedButton(
+        onPressed: () {
+          log("pizza push!");
+          Navigator.pushNamed(context, RouteName.pizza);
+        },
+        child: const CustomText("Push pizza"),
+      ),
     ]);
   }
 }
