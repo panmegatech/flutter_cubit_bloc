@@ -7,8 +7,8 @@ import 'package:flutter_bloc_simple/pages/ant_screen.dart';
 import 'package:flutter_bloc_simple/pages/bee_screen.dart';
 import 'package:flutter_bloc_simple/pages/cat_screen.dart';
 import 'package:flutter_bloc_simple/pages/home_screen.dart';
-import 'package:flutter_bloc_simple/pages/hotel_screen.dart';
-import 'package:flutter_bloc_simple/pages/pizza_screen.dart';
+import 'package:flutter_bloc_simple/pages/page_not_found_screen.dart';
+import 'package:flutter_bloc_simple/pages/dolphin_screen.dart';
 import 'package:flutter_bloc_simple/route_name.dart';
 
 void main() {
@@ -36,20 +36,16 @@ class MainApp extends StatelessWidget {
         final PageRoute pageRoute;
 
         switch (routeName) {
-          case RouteName.pizza:
+          case RouteName.dolphin:
             //todo handle advanced BLoC
             pageRoute = MaterialPageRoute(
-              builder: (context) => const PizzaScreen(),
+              builder: (context) => const DolphinScreen(),
             );
             break;
-          case RouteName.hotel:
-            pageRoute = MaterialPageRoute(
-              builder: (context) => const HotelScreen(),
-            );
-            break;
+          case RouteName.pageNotFound:
           default:
             pageRoute = MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => const PageNotFoundScreen(),
             );
         }
 

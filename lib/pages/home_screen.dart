@@ -34,10 +34,10 @@ class HomeScreen extends StatelessWidget {
       ),
       ElevatedButton(
         onPressed: () {
-          log("pizza push!");
-          Navigator.pushNamed(context, RouteName.pizza);
+          log("dolphin push!");
+          Navigator.pushNamed(context, RouteName.dolphin);
         },
-        child: const CustomText("Push pizza"),
+        child: const CustomText("Push dolphin"),
       ),
     ]);
   }

@@ -3,6 +3,6 @@ class RouteName {
   static const String ant = "/ant";
   static const String bee = "/bee";
   static const String cat = "/cat";
-  static const String pizza = "/pizza";
-  static const String hotel = "/hotel";
+  static const String dolphin = "/dolphin";
+  static const String pageNotFound = "/pageNotFound";
 }
