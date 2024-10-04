@@ -11,8 +11,8 @@ class StandardCounterCubit extends Cubit<StandardCounterState> {
     emit(StandardCounterLoadingState());
 
     await Future.delayed(const Duration(milliseconds: 1800));
-    final randomString = generateRandomString(8);
+
     return emit(StandardCounterHasDataState(
-        message: "some data from API: \n\n $randomString"));
+        message: "some data from API: \n\n ${randomString(8)}"));
   }
 }

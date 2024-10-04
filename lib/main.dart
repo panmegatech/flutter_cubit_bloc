@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_simple/bloc/advanced/advanced_bloc.dart';
 import 'package:flutter_bloc_simple/bloc/basic/basic_counter_cubit.dart';
 import 'package:flutter_bloc_simple/bloc/simple/simple_counter_cubit.dart';
 import 'package:flutter_bloc_simple/bloc/standard/standard_counter_cubit.dart';
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
         RouteName.ant: (_) => const AntScreen(),
         RouteName.bee: (_) => const BeeScreen(),
         RouteName.cat: (_) => const CatScreen(),
+        RouteName.home: (_) => const HomeScreen(),
       },
       initialRoute: RouteName.home,
       onGenerateRoute: (settings) {
@@ -39,7 +41,10 @@ class MainApp extends StatelessWidget {
           case RouteName.dolphin:
             //todo handle advanced BLoC
             pageRoute = MaterialPageRoute(
-              builder: (context) => const DolphinScreen(),
+              builder: (context) => BlocProvider(
+                create: (context) => AdvancedBloc(),
+                child: const DolphinScreen(),
+              ),
             );
             break;
           case RouteName.pageNotFound:

@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-String generateRandomString(int length) {
+String randomString(int length) {
   final Random random = Random();
 
   const characters =
@@ -17,4 +17,9 @@ Color randomColor() {
     Random().nextInt(256), // Random value for green
     Random().nextInt(256), // Random value for blue
   );
+}
+
+bool randomBoolean() {
+  Random random = Random();
+  return random.nextBool();
 }

@@ -10,7 +10,7 @@ class CustomFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      heroTag: generateRandomString(5),
+      heroTag: randomString(5),
       onPressed: onPressed,
       child: Text(name ?? ""),
     );
