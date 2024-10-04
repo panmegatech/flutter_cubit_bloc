@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_simple/bloc/basic_counter_cubit.dart';
-import 'package:flutter_bloc_simple/bloc/simple_counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/basic/basic_counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/simple/simple_counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/standard/standard_counter_cubit.dart';
 import 'package:flutter_bloc_simple/pages/ant_screen.dart';
 import 'package:flutter_bloc_simple/pages/bee_screen.dart';
 import 'package:flutter_bloc_simple/pages/cat_screen.dart';
@@ -12,6 +13,7 @@ void main() {
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (_) => BasicCounterCubit()),
     BlocProvider(create: (_) => SimpleCounterCubit()),
+    BlocProvider(create: (_) => StandardCounterCubit()),
   ], child: const MainApp()));
 }
 

@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_simple/bloc/simple_counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/simple/simple_counter_cubit.dart';
 import 'package:flutter_bloc_simple/utils/utils.dart';
 import 'package:flutter_bloc_simple/widgets/custom_floating_action_button.dart';
 import 'package:flutter_bloc_simple/widgets/custom_scaffold.dart';
