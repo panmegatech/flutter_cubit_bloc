@@ -68,12 +68,9 @@ class DolphinScreen extends StatelessWidget {
             if (state is AdvancedHasDataState) {
               return Padding(
                 padding: const EdgeInsets.all(38.0),
-                child: Container(
-                  color: Colors.grey,
-                  child: CustomText(
-                    "Response: ${state.message} \n_______\nStatus: ${state.status}",
-                    color: randomColor(),
-                  ),
+                child: CustomText(
+                  "Response: ${state.message} \n_______\nStatus: ${state.status}",
+                  color: randomColor(),
                 ),
               );
             }

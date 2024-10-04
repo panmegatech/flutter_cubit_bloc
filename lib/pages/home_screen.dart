@@ -16,28 +16,40 @@ class HomeScreen extends StatelessWidget {
           log("pushAnt!");
           Navigator.pushNamed(context, RouteName.ant);
         },
-        child: const CustomText("Push Ant"),
+        child: const CustomText(
+          "Ant : Basic Cubit",
+          color: Colors.teal,
+        ),
       ),
       ElevatedButton(
         onPressed: () {
           log("pushBee!");
           Navigator.pushNamed(context, RouteName.bee);
         },
-        child: const CustomText("Push Bee"),
+        child: const CustomText(
+          "Bee : Simple Cubit",
+          color: Colors.orange,
+        ),
       ),
       ElevatedButton(
         onPressed: () {
           log("pushCat!");
           Navigator.pushNamed(context, RouteName.cat);
         },
-        child: const CustomText("Push Cat"),
+        child: const CustomText(
+          "Cat: Standard Cubit",
+          color: Colors.indigo,
+        ),
       ),
       ElevatedButton(
         onPressed: () {
           log("dolphin push!");
           Navigator.pushNamed(context, RouteName.dolphin);
         },
-        child: const CustomText("Push dolphin"),
+        child: const CustomText(
+          "dolphin: Advanced BLoC",
+          color: Colors.pink,
+        ),
       ),
     ]);
   }

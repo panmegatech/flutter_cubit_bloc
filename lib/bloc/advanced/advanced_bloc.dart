@@ -13,16 +13,16 @@ class AdvancedBloc extends Bloc<AdvancedEvent, AdvancedState> {
       //todo handle logic such as call usecase , API etc.
       emit(AdvancedLoadingState());
       await Future.delayed(const Duration(milliseconds: 1800));
-      final responseStatus = randomBoolean();
-      log("Response status: $responseStatus");
-      if (!responseStatus) {
-        return emit(AdvancedErrorState());
-      }
+      // final responseStatus = randomBoolean();
+      // log("Response status: $responseStatus");
+      // if (!responseStatus) {
+      //   return emit(AdvancedErrorState());
+      // }
 
       return emit(
         AdvancedHasDataState(
           message: "example data from usecase ${randomString(8)}",
-          status: responseStatus,
+          status: true,
         ),
       );
     });
