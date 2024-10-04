@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_simple/bloc/counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/basic_counter_cubit.dart';
 import 'package:flutter_bloc_simple/widgets/custom_scaffold.dart';
 import 'package:flutter_bloc_simple/widgets/custom_text.dart';
 
@@ -21,7 +21,7 @@ class _AntScreenState extends State<AntScreen> {
     return CustomScaffold(
       title: "Ant Screen",
       children: [
-        BlocBuilder<CounterCubit, int>(
+        BlocBuilder<BasicCounterCubit, int>(
           builder: (context, state) {
             return CustomText("Counter Cubit Example: $state");
           },
@@ -32,7 +32,7 @@ class _AntScreenState extends State<AntScreen> {
             ElevatedButton(
                 onPressed: () {
                   log("call Counter increment event");
-                  context.read<CounterCubit>().increment();
+                  context.read<BasicCounterCubit>().increment();
                 },
                 child: const CustomText(
                   "Cubit(+)",
@@ -41,7 +41,7 @@ class _AntScreenState extends State<AntScreen> {
             ElevatedButton(
                 onPressed: () {
                   log("call Counter decrement event");
-                  context.read<CounterCubit>().decrement();
+                  context.read<BasicCounterCubit>().decrement();
                 },
                 child: const CustomText(
                   "Cubit(-)",

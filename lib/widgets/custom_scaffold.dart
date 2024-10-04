@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc_simple/widgets/custom_floating_action_button.dart';
 import 'package:flutter_bloc_simple/widgets/custom_text.dart';
 
 class CustomScaffold extends StatelessWidget {
@@ -6,10 +9,12 @@ class CustomScaffold extends StatelessWidget {
 
   final String title;
 
+  final List<CustomFloatingActionButton>? customFloatingActionButton;
   const CustomScaffold({
     super.key,
     required this.children,
     required this.title,
+    this.customFloatingActionButton,
   });
 
   @override
@@ -19,10 +24,19 @@ class CustomScaffold extends StatelessWidget {
         title: CustomText(title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: children,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: children,
+          ),
         ),
+      ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <CustomFloatingActionButton>[
+          ...customFloatingActionButton ?? [],
+        ],
       ),
     );
   }
