@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_simple/widgets/custom_floating_action_button.dart';
 import 'package:flutter_bloc_simple/widgets/custom_text.dart';

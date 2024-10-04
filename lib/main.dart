@@ -7,6 +7,7 @@ import 'package:flutter_bloc_simple/pages/ant_screen.dart';
 import 'package:flutter_bloc_simple/pages/bee_screen.dart';
 import 'package:flutter_bloc_simple/pages/cat_screen.dart';
 import 'package:flutter_bloc_simple/pages/home_screen.dart';
+import 'package:flutter_bloc_simple/pages/pizza_screen.dart';
 import 'package:flutter_bloc_simple/route_name.dart';
 
 void main() {
@@ -24,12 +25,29 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        RouteName.home: (_) => const HomeScreen(),
         RouteName.ant: (_) => const AntScreen(),
         RouteName.bee: (_) => const BeeScreen(),
         RouteName.cat: (_) => const CatScreen(),
       },
       initialRoute: RouteName.home,
+      onGenerateRoute: (settings) {
+        final String? routeName = settings.name;
+        final PageRoute pageRoute;
+
+        switch (routeName) {
+          case RouteName.pizza:
+            pageRoute = MaterialPageRoute(
+              builder: (context) => const PizzaScreen(),
+            );
+            break;
+          default:
+            pageRoute = MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            );
+        }
+
+        return pageRoute;
+      },
     );
   }
 }
