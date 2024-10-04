@@ -10,7 +10,7 @@ class BeeScreen extends StatelessWidget {
     return const CustomScaffold(
       title: "Bee Screen",
       children: [
-        CustomText("Bee"),
+        CustomText("Bee Screen"),
       ],
     );
   }

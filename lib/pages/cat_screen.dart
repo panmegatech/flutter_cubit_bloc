@@ -10,7 +10,7 @@ class CatScreen extends StatelessWidget {
     return const CustomScaffold(
       title: "Cat Screen",
       children: [
-        CustomText("Cat"),
+        CustomText("Cat Screen"),
       ],
     );
   }
