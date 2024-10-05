@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+
+import 'package:flutter_bloc_simple/route_name.dart';
 import 'package:flutter_bloc_simple/widgets/custom_floating_action_button.dart';
 import 'package:flutter_bloc_simple/widgets/custom_text.dart';
 
@@ -20,6 +24,22 @@ class CustomScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: CustomText(title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              log("go Cart");
+              Navigator.pushNamed(context, RouteName.shoppingCart);
+              // showDialog(
+              //   context: context,
+              //   builder: (context) {
+              //     return const CartPage();
+              //   },
+              // );
+            },
+            icon: const Icon(Icons.shopping_cart),
+            color: Colors.red,
+          )
+        ],
       ),
       body: Center(
         child: Padding(

@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_simple/bloc/advanced/advanced_bloc.dart';
 import 'package:flutter_bloc_simple/bloc/basic/basic_counter_cubit.dart';
+import 'package:flutter_bloc_simple/bloc/cart/cart_bloc.dart';
 import 'package:flutter_bloc_simple/bloc/simple/simple_counter_cubit.dart';
 import 'package:flutter_bloc_simple/bloc/standard/standard_counter_cubit.dart';
 import 'package:flutter_bloc_simple/pages/ant_screen.dart';
 import 'package:flutter_bloc_simple/pages/bee_screen.dart';
+import 'package:flutter_bloc_simple/pages/shopping_cart_screen.dart';
 import 'package:flutter_bloc_simple/pages/cat_screen.dart';
 import 'package:flutter_bloc_simple/pages/home_screen.dart';
 import 'package:flutter_bloc_simple/pages/page_not_found_screen.dart';
@@ -17,6 +19,7 @@ void main() {
     BlocProvider(create: (_) => BasicCounterCubit()),
     BlocProvider(create: (_) => SimpleCounterCubit()),
     BlocProvider(create: (_) => StandardCounterCubit()),
+    BlocProvider(create: (_) => CartBloc()),
   ], child: const MainApp()));
 }
 
@@ -31,6 +34,7 @@ class MainApp extends StatelessWidget {
         RouteName.bee: (_) => const BeeScreen(),
         RouteName.cat: (_) => const CatScreen(),
         RouteName.home: (_) => const HomeScreen(),
+        RouteName.shoppingCart: (_) => const ShoppingCartScreen(),
       },
       initialRoute: RouteName.home,
       onGenerateRoute: (settings) {
