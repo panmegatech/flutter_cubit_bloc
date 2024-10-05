@@ -1,11 +1,17 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-String randomString(int length) {
+String randomString(int length, {bool? onlyNumber}) {
   final Random random = Random();
 
-  const characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  final String characters;
+
+  if (onlyNumber ?? false) {
+    characters = '0123456789';
+  } else {
+    characters =
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  }
   return List.generate(
       length, (index) => characters[random.nextInt(characters.length)]).join();
 }

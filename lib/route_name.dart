@@ -5,4 +5,5 @@ class RouteName {
   static const String cat = "/cat";
   static const String dolphin = "/dolphin";
   static const String pageNotFound = "/pageNotFound";
+  static const String shoppingCart = "/shoppingCart";
 }
