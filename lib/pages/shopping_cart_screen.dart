@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_simple/bloc/cart/cart_bloc.dart';
 import 'package:flutter_bloc_simple/utils/utils.dart';
 
-// สมมุติว่าคุณได้ import คลาส CartBloc, CartState, และ CartEvent ที่เราสร้างไว้ก่อนหน้านี้
 
 class ShoppingCartScreen extends StatelessWidget {
   const ShoppingCartScreen({super.key});
@@ -44,7 +43,7 @@ class ShoppingCartScreen extends StatelessWidget {
                 trailing: IconButton(
                   icon: const Icon(Icons.remove_shopping_cart),
                   onPressed: () {
-                    // ลบสินค้าจากตะกร้า
+                    
                     context
                         .read<CartBloc>()
                         .add(RemoveFromCart(item.productId));
@@ -80,7 +79,7 @@ class ShoppingCartScreen extends StatelessWidget {
             onPressed: state.isLoading
                 ? null
                 : () {
-                    // ตัวอย่างการเพิ่มสินค้าในตะกร้า
+                  
                     log("addToCart");
                     context.read<CartBloc>().add(AddToCart(CartItem(
                           productId: randomString(5, onlyNumber: true),
